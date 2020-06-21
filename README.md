@@ -1,6 +1,8 @@
 [Advertisement Management System]
 2020. 06. 21
-    - 프로젝트 초기 셋팅 (@link https://velog.io/@pop8682/%EB%B2%88%EC%97%AD-React-webpack-%EC%84%A4%EC%A0%95-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%ED%95%B4%EB%B3%B4%EA%B8%B0)
+1. 관련 링크
+    - https://velog.io/@pop8682/%EB%B2%88%EC%97%AD-React-webpack-%EC%84%A4%EC%A0%95-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%ED%95%B4%EB%B3%B4%EA%B8%B0
+2. 프로젝트 초기 셋팅
     - @babel/core           : 리액트는 'ES6' 를 사용하므로 'ES5' 로 변경
     - @babel/preset-env     : 'ES6' -> 'ES5' & 브라우져 별 컴파일
     - @babel/preset-react   : 'jsx' -> 'javascript'
