@@ -14,6 +14,12 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname + '/build')
     },
+    // [devServer] 개발 서버 설정
+    devServer: {
+        contentBase: path.resolve('./build'),
+        index: 'index.html',
+        port: 3000,
+    },
     // [mode] 개발, 배포, 테스트 등 환경 설정 분리
     mode: 'none',
     // [module] 모듈의 컴파일 형식
