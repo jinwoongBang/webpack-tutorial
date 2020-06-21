@@ -14,7 +14,7 @@ module.exports = {
     // [output] 컴파일 이후 결과 파일
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname + '/build')
+        path: path.resolve(__dirname, '../build')
     },
     // [devServer] 개발 서버 설정
     devServer: {

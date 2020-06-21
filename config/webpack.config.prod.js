@@ -14,7 +14,7 @@ module.exports = {
     // [output] 컴파일 이후 결과 파일
     output: {
         filename: 'bundle.[contenthash].js',
-        path: path.resolve(__dirname + '/build')
+        path: path.resolve(__dirname, '../build')
     },
     // [mode] 개발, 배포, 테스트 등 환경 설정 분리
     mode: 'production',
