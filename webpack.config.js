@@ -41,6 +41,11 @@ module.exports = {
                 // use 에서 사용되는 load 는 오른쪽 > 왼쪽 순서로 실행
                 // css-loader 로 css 를 읽고 MniCssExtractPlugin.loader로 파일로 추출
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
+            },
+            // [scss 로더]
+            {
+                test: /\.scss$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             }
         ]
     },
