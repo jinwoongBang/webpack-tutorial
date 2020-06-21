@@ -4,6 +4,8 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 // [3] 웹팩에서 css 파일을 읽은 후 어디에 저장할 것인지 결정하는 플러그인
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// [4] 사용 안하는 파일을 자동으로 삭제해주는 플러그인 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // 출력할 모듈
 module.exports = {
@@ -62,6 +64,9 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: 'style.css'
+        }),
+        new CleanWebpackPlugin({
+            cleanAfterEveryBuildPatterns: ['build']
         })
     ]
 }
