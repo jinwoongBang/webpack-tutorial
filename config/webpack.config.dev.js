@@ -24,8 +24,8 @@ module.exports = {
   },
   // [mode] 개발, 배포, 테스트 등 환경 설정 분리
   mode: "none",
-  // [debug] 내부 모듈 사용 (source-map, cheap-module-eval-source-map)
-  devtool: "inline-source-map",
+  // [debug] 내부 모듈 사용 (source-map, inline-source-map, cheap-module-eval-source-map)
+  devtool: "source-map",
   // [path] 웹팩이 알아서 경로나 확장자를 처리할 수 있게 도와주는 옵션
   resolve: {
     modules: ["node_modules"],
