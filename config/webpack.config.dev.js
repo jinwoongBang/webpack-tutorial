@@ -6,11 +6,14 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // [4] 사용 안하는 파일을 자동으로 삭제해주는 플러그인
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+// [5] 타입스크립트 설정 파일
+const { compilerOptions } = require("../tsconfig.json");
 
 // 출력할 모듈
 module.exports = {
   // [entry] 컴파일 할 파일
-  entry: "./src/index.tsx",
+  entry: path.resolve(__dirname, "../src/index.tsx"),
+  //   entry: "./src/index.tsx",
   // [output] 컴파일 이후 결과 파일
   output: {
     filename: "bundle.js",
@@ -28,7 +31,10 @@ module.exports = {
   devtool: "source-map",
   // [path] 웹팩이 알아서 경로나 확장자를 처리할 수 있게 도와주는 옵션
   resolve: {
-    modules: ["node_modules"],
+    modules: [
+      "node_modules",
+      path.resolve(__dirname, "../", compilerOptions.baseUrl),
+    ],
     extensions: [".ts", ".tsx", ".js", "jsx", "scss"],
   },
   // [module] 모듈의 컴파일 형식
@@ -69,6 +75,9 @@ module.exports = {
         use: [
           {
             loader: "ts-loader",
+            options: {
+              configFile: "../tsconfig.json",
+            },
           },
         ],
       },
@@ -78,6 +87,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./public/index.html", // 해당 위치의 html 파일을 읽어옴
       filename: "index.html", // output 으로 출력할 파일
+      favicon: "./public/favicon.png",
     }),
     new MiniCssExtractPlugin({
       filename: "style.css",
@@ -86,8 +96,8 @@ module.exports = {
       cleanAfterEveryBuildPatterns: ["build"],
     }),
   ],
-//   externals: {
-//     react: "React",
-//     "react-dom": "ReactDOM",
-//   },
+  // externals: {
+  //   "react": "React",
+  //   "react-dom": "ReactDOM",
+  // },
 };
