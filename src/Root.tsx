@@ -1,12 +1,16 @@
-import React from "react";
-import "style.scss";
+import React from 'react';
+import 'style.scss';
 
-interface RootProps {
-  name: string;
-}
+type RootProps = {
+    name?: string;
+};
 
-const Root = ({ name }: RootProps) => {
-  return <h3 className="title">Hello, {name}</h3>;
+const Root: React.FC<RootProps> = ({ name }: RootProps) => {
+    return <h3 className="title">Hello, {name}</h3>;
+};
+
+Root.defaultProps = {
+    name: 'React',
 };
 
 export default Root;
